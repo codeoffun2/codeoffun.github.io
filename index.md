@@ -1,9 +1,51 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/codeoffun2/codeoffun.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+//initial number of cookies    
+var num = 0;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+window.onload = function () {
+        var name = prompt("What is your name");
+        
+        var space = document.getElementById("space");
+        
+        space.innerHTML = name + "'s Bakery";
+}
 
+var cookie = document.getElementById("cookie");
+
+function cookieClick() { 
+    num += 1;
+
+    var numbers = document.getElementById("numbers");
+    
+    //upgrade level for printing
+    var upgradeLevel = document.getElementById("upgradeLevel");
+    
+    numbers.innerHTML = num;      
+    //automatic Granny upgrade to 2x
+    if(num >= 30 ){
+        num += 2;
+        upgradeLevel.innerHTML = "Granny Level";
+    }
+
+    //automatic factory upgrade to 10x
+    if(num >= 500) {
+        num += 10;
+        upgradeLevel.innerHTML = "Factory Level";
+    }
+
+    //automatic plant upgrade to 30x
+    if(num >= 1000) {
+        num += 30;
+        upgradeLevel.innerHTML = "Plant Level";
+    }
+
+    //automatic super factory upgrade to 1000x
+    if(num >= 100000) {
+        num += 1000;
+        upgradeLevel.innerHTML = "Super-Plant Level";
+    }
+}
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
